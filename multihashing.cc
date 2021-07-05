@@ -373,7 +373,7 @@ NAN_METHOD(argon2) {
 	    
     if (info.Length() >= 3) {
         if (!info[2]->IsNumber()) return THROW_ERROR_EXCEPTION("Argument 3 should be a number");
-        height = Nan::To<unsigned int>(info[2]).FromMaybe(0);
+        algo = Nan::To<unsigned int>(info[2]).FromMaybe(0);
     }
 
     const xmrig::cn_hash_fun fn = get_argon2_fn(algo);
