@@ -173,7 +173,7 @@ NAN_METHOD(randomx) {
         case 2:  xalgo = xmrig::Algorithm::RX_ARQ; break;
         case 3:  xalgo = xmrig::Algorithm::RX_XLA; break;
         case 17: xalgo = xmrig::Algorithm::RX_WOW; break;
-        //case 18: xalgo = xmrig::Algorithm::RX_LOKI; break;
+        case 18: xalgo = xmrig::Algorithm::AR2_CHUKWA_V2; break;
         case 19: xalgo = xmrig::Algorithm::RX_KEVA; break;
         default: xalgo = xmrig::Algorithm::RX_0;
     }
