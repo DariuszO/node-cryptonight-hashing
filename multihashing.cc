@@ -369,6 +369,7 @@ NAN_METHOD(argon2) {
     if (info.Length() >= 2) {
         if (!info[1]->IsNumber()) return THROW_ERROR_EXCEPTION("Argument 2 should be a number");
         algo = Nan::To<int>(info[1]).FromMaybe(0);
+    }
 	    
     if (info.Length() >= 3) {
         if (!info[2]->IsNumber()) return THROW_ERROR_EXCEPTION("Argument 3 should be a number");
