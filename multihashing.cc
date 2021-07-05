@@ -173,7 +173,7 @@ NAN_METHOD(randomx) {
         case 2:  xalgo = xmrig::Algorithm::RX_ARQ; break;
         case 3:  xalgo = xmrig::Algorithm::RX_XLA; break;
         case 17: xalgo = xmrig::Algorithm::RX_WOW; break;
-        case 18: xalgo = xmrig::Algorithm::AR2_CHUKWA_V2; break;
+        //case 18: xalgo = xmrig::Algorithm::AR2_CHUKWA_V2; break;
         case 19: xalgo = xmrig::Algorithm::RX_KEVA; break;
         default: xalgo = xmrig::Algorithm::RX_0;
     }
@@ -369,6 +369,10 @@ NAN_METHOD(argon2) {
     if (info.Length() >= 2) {
         if (!info[1]->IsNumber()) return THROW_ERROR_EXCEPTION("Argument 2 should be a number");
         algo = Nan::To<int>(info[1]).FromMaybe(0);
+	    
+    if (info.Length() >= 3) {
+        if (!info[2]->IsNumber()) return THROW_ERROR_EXCEPTION("Argument 3 should be a number");
+        height = Nan::To<unsigned int>(info[2]).FromMaybe(0);
     }
 
     const xmrig::cn_hash_fun fn = get_argon2_fn(algo);
