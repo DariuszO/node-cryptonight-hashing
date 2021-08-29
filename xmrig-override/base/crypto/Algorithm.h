@@ -93,6 +93,7 @@ public:
         CN_LITE,
         CN_HEAVY,
         CN_PICO,
+		CN_PLEX,
         RANDOM_X,
         ARGON2,
         ASTROBWT,
@@ -102,7 +103,7 @@ public:
     inline Algorithm()                                     {}
     inline Algorithm(Id id) : m_id(id)                     {}
 
-    inline bool isCN() const                          { auto f = family(); return f == CN || f == CN_LITE || f == CN_HEAVY || f == CN_PICO; }
+    inline bool isCN() const                          { auto f = family(); return f == CN || f == CN_LITE || f == CN_HEAVY || f == CN_PICO || f == CN_PLEX; }
     inline bool isEqual(const Algorithm &other) const { return m_id == other.m_id; }
     inline bool isValid() const                       { return m_id != INVALID; }
     inline Family family() const                      { return family(m_id); }
