@@ -96,8 +96,8 @@ public:
             return CN_ITER / 8;
 #       endif
 
-#       ifdef XMRIG_ALGO_CN_PLEX
-        case Algorithm::CN_PLEX_0:
+#       ifdef XMRIG_ALGO_CN_UPX2
+        case Algorithm::CN_UPX2_0:
 #       endif
 
 #       ifdef XMRIG_ALGO_CN_GPU
@@ -114,8 +114,8 @@ public:
 
     inline static uint32_t mask(Algorithm::Id algo)
     {
-#       ifdef XMRIG_ALGO_CN_PLEX
-        if (algo == Algorithm::CN_PLEX_0) {
+#       ifdef XMRIG_ALGO_CN_UPX2
+        if (algo == Algorithm::CN_UPX2_0) {
             return 0x1FFF0;
         }
 #       endif
@@ -173,8 +173,8 @@ public:
 #       endif
             return Algorithm::CN_2;
 
-#       ifdef XMRIG_ALGO_CN_PLEX
-        case Algorithm::CN_PLEX_0:
+#       ifdef XMRIG_ALGO_CN_UPX2
+        case Algorithm::CN_UPX2_0:
 #       endif
 
 #       ifdef XMRIG_ALGO_CN_GPU
@@ -219,7 +219,7 @@ template<> constexpr inline uint32_t CnAlgo<Algorithm::CN_XAO>::iterations() con
 template<> constexpr inline uint32_t CnAlgo<Algorithm::CN_DOUBLE>::iterations() const       { return CN_ITER * 2; }
 template<> constexpr inline uint32_t CnAlgo<Algorithm::CN_RWZ>::iterations() const          { return 0x60000; }
 template<> constexpr inline uint32_t CnAlgo<Algorithm::CN_ZLS>::iterations() const          { return 0x60000; }
-template<> constexpr inline uint32_t CnAlgo<Algorithm::CN_PLEX_0>::iterations() const       { return 0x4000; }
+template<> constexpr inline uint32_t CnAlgo<Algorithm::CN_UPX2_0>::iterations() const       { return 0x4000; }
 template<> constexpr inline uint32_t CnAlgo<Algorithm::CN_PICO_0>::iterations() const       { return CN_ITER / 8; }
 template<> constexpr inline uint32_t CnAlgo<Algorithm::CN_PICO_TLO>::iterations() const     { return CN_ITER / 8; }
 template<> constexpr inline uint32_t CnAlgo<Algorithm::CN_CCX>::iterations() const          { return CN_ITER / 2; }
@@ -231,12 +231,12 @@ template<> constexpr inline size_t CnAlgo<Algorithm::CN_LITE_1>::memory() const 
 template<> constexpr inline size_t CnAlgo<Algorithm::CN_HEAVY_0>::memory() const            { return CN_MEMORY * 2; }
 template<> constexpr inline size_t CnAlgo<Algorithm::CN_HEAVY_TUBE>::memory() const         { return CN_MEMORY * 2; }
 template<> constexpr inline size_t CnAlgo<Algorithm::CN_HEAVY_XHV>::memory() const          { return CN_MEMORY * 2; }
-template<> constexpr inline size_t CnAlgo<Algorithm::CN_PLEX_0>::memory() const             { return 128 * 1024; }
+template<> constexpr inline size_t CnAlgo<Algorithm::CN_UPX2_0>::memory() const             { return 128 * 1024; }
 template<> constexpr inline size_t CnAlgo<Algorithm::CN_PICO_0>::memory() const             { return CN_MEMORY / 8; }
 template<> constexpr inline size_t CnAlgo<Algorithm::CN_PICO_TLO>::memory() const           { return CN_MEMORY / 8; }
 
 
-template<> constexpr inline uint32_t CnAlgo<Algorithm::CN_PLEX_0>::mask() const             { return 0x1FFF0; }
+template<> constexpr inline uint32_t CnAlgo<Algorithm::CN_UPX2_0>::mask() const             { return 0x1FFF0; }
 template<> constexpr inline uint32_t CnAlgo<Algorithm::CN_PICO_0>::mask() const             { return 0x1FFF0; }
 template<> constexpr inline uint32_t CnAlgo<Algorithm::CN_GPU>::mask() const                { return 0x1FFFC0; }
 

@@ -73,7 +73,7 @@ size_t xmrig::Algorithm::l3() const
     case CN_PICO:
         return oneMiB / 4;
 		
-    case CN_PLEX:
+    case CN_UPX2:
         return oneMiB / 8;
 
     default:

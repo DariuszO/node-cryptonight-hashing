@@ -919,8 +919,8 @@ inline void cryptonight_single_hash_asm(const uint8_t *__restrict__ input, size_
         }
     }
 
-#   ifdef XMRIG_ALGO_CN_PLEX
-    else if (ALGO == Algorithm::CN_PLEX_0) {
+#   ifdef XMRIG_ALGO_CN_UPX2
+    else if (ALGO == Algorithm::CN_UPX2_0) {
         if (ASM == Assembly::INTEL) {
             cn_plex_mainloop_ivybridge_asm(ctx);
         }
@@ -1018,8 +1018,8 @@ inline void cryptonight_double_hash_asm(const uint8_t *__restrict__ input, size_
         cn_half_double_mainloop_sandybridge_asm(ctx);
     }
 	
-#   ifdef XMRIG_ALGO_CN_PLEX
-    else if (ALGO == Algorithm::CN_PLEX_0) {
+#   ifdef XMRIG_ALGO_CN_UPX2
+    else if (ALGO == Algorithm::CN_UPX2_0) {
         cn_plex_double_mainloop_sandybridge_asm(ctx);
     }
 #   endif

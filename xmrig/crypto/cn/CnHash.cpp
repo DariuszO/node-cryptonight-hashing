@@ -151,7 +151,7 @@ static void patchAsmVariants()
     cn_half_mainloop_bulldozer_asm              = reinterpret_cast<cn_mainloop_fun>         (base + 0x2000);
     cn_half_double_mainloop_sandybridge_asm     = reinterpret_cast<cn_mainloop_fun>         (base + 0x3000);
 
-#   ifdef XMRIG_ALGO_CN_PLEX
+#   ifdef XMRIG_ALGO_CN_UPX2
     cn_plex_mainloop_ivybridge_asm              = reinterpret_cast<cn_mainloop_fun>         (base + 0x4000);
     cn_plex_mainloop_ryzen_asm                  = reinterpret_cast<cn_mainloop_fun>         (base + 0x5000);
     cn_plex_mainloop_bulldozer_asm              = reinterpret_cast<cn_mainloop_fun>         (base + 0x6000);
@@ -191,10 +191,10 @@ static void patchAsmVariants()
         patchCode(cn_half_double_mainloop_sandybridge_asm,   cnv2_double_mainloop_sandybridge_asm,  ITER);
     }
 
-#   ifdef XMRIG_ALGO_CN_PLEX
+#   ifdef XMRIG_ALGO_CN_UPX2
     {
-        constexpr uint32_t ITER = CnAlgo<Algorithm::CN_PLEX_0>().iterations();
-        constexpr uint32_t MASK = CnAlgo<Algorithm::CN_PLEX_0>().mask();
+        constexpr uint32_t ITER = CnAlgo<Algorithm::CN_UPX2_0>().iterations();
+        constexpr uint32_t MASK = CnAlgo<Algorithm::CN_UPX2_0>().mask();
 
         patchCode(cn_plex_mainloop_ivybridge_asm,            cnv2_mainloop_ivybridge_asm,           ITER,   MASK);
         patchCode(cn_plex_mainloop_ryzen_asm,                cnv2_mainloop_ryzen_asm,               ITER,   MASK);
@@ -294,9 +294,9 @@ xmrig::CnHash::CnHash()
     ADD_FN_ASM(Algorithm::CN_PICO_TLO);
 #   endif
 
-#   ifdef XMRIG_ALGO_CN_PLEX
-    ADD_FN(Algorithm::CN_PLEX_0);
-    ADD_FN_ASM(Algorithm::CN_PLEX_0);
+#   ifdef XMRIG_ALGO_CN_UPX2
+    ADD_FN(Algorithm::CN_UPX2_0);
+    ADD_FN_ASM(Algorithm::CN_UPX2_0);
 #   endif
 
     ADD_FN(Algorithm::CN_CCX);
