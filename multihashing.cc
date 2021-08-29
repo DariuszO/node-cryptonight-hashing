@@ -231,7 +231,7 @@ static xmrig::cn_hash_fun get_cn_pico_fn(const int algo) {
   }
 }
 
-static xmrig::cn_hash_fun get_cn_plex_fn(const int algo) {
+static xmrig::cn_hash_fun get_cn_upx2_fn(const int algo) {
   switch (algo) {
     case 0:  return FNA(CN_UPX2_0);
     default: return FNA(CN_UPX2_0);
@@ -389,7 +389,7 @@ NAN_METHOD(cryptonight_plex) {
         height = Nan::To<unsigned int>(info[2]).FromMaybe(0);
     }
 
-    const xmrig::cn_hash_fun fn = get_cn_plex_fn(algo);
+    const xmrig::cn_hash_fun fn = get_cn_upx2_fn(algo);
 
     char output[32];
     fn(reinterpret_cast<const uint8_t*>(Buffer::Data(target)), Buffer::Length(target), reinterpret_cast<uint8_t*>(output), &ctx, 0);
