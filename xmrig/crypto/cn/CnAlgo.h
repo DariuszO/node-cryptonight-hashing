@@ -177,7 +177,7 @@ public:
 #       ifdef XMRIG_ALGO_CN_UPX2
         case Algorithm::CN_UPX2_0:
 #       endif
-            return Algorithm::CN_UPX2_0;
+             return Algorithm::CN_2;
 
 #       ifdef XMRIG_ALGO_CN_GPU
         case Algorithm::CN_GPU:
@@ -208,7 +208,7 @@ template<> constexpr inline Algorithm::Id CnAlgo<Algorithm::CN_FAST>::base() con
 template<> constexpr inline Algorithm::Id CnAlgo<Algorithm::CN_RTO>::base() const           { return Algorithm::CN_1; }
 template<> constexpr inline Algorithm::Id CnAlgo<Algorithm::CN_LITE_1>::base() const        { return Algorithm::CN_1; }
 template<> constexpr inline Algorithm::Id CnAlgo<Algorithm::CN_HEAVY_TUBE>::base() const    { return Algorithm::CN_1; }
-template<> constexpr inline Algorithm::Id CnAlgo<Algorithm::CN_UPX2_0>::base() const    { return Algorithm::CN_UPX2_0; }
+template<> constexpr inline Algorithm::Id CnAlgo<Algorithm::CN_UPX2_0>::base() const        { return Algorithm::CN_2; }
 
 
 template<> constexpr inline uint32_t CnAlgo<Algorithm::CN_FAST>::iterations() const         { return CN_ITER / 2; }
