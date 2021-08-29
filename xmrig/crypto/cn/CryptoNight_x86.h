@@ -1020,7 +1020,7 @@ inline void cryptonight_double_hash_asm(const uint8_t *__restrict__ input, size_
 	
 #   ifdef XMRIG_ALGO_CN_UPX2
     else if (ALGO == Algorithm::CN_UPX2_0) {
-        cn_plex_double_mainloop_sandybridge_asm(ctx);
+        cn_upx2_double_mainloop_sandybridge_asm(ctx);
     }
 #   endif
 
