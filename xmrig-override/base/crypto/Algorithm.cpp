@@ -72,6 +72,9 @@ size_t xmrig::Algorithm::l3() const
 
     case CN_PICO:
         return oneMiB / 4;
+		
+    case CN_UPX2:
+        return oneMiB / 8;
 
     default:
         break;
@@ -104,6 +107,9 @@ size_t xmrig::Algorithm::l3() const
         switch (m_id) {
         case AR2_CHUKWA:
             return oneMiB / 2;
+                
+        case AR2_CHUKWA_V2:
+            return oneMiB;    
 
         case AR2_WRKZ:
             return oneMiB / 4;

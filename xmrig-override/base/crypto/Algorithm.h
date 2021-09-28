@@ -34,6 +34,7 @@
 #define XMRIG_ALGO_CN_LITE  1
 #define XMRIG_ALGO_CN_HEAVY 1
 #define XMRIG_ALGO_CN_PICO  1
+#define XMRIG_ALGO_CN_UPX2  1
 #define XMRIG_ALGO_RANDOMX  1
 #define XMRIG_ALGO_ARGON2   1
 #define XMRIG_ALGO_ASTROBWT 1
@@ -62,6 +63,7 @@ public:
         CN_HEAVY_0,    // "cn-heavy/0"       CryptoNight-Heavy (4 MB).
         CN_HEAVY_TUBE, // "cn-heavy/tube"    CryptoNight-Heavy (modified, TUBE only).
         CN_HEAVY_XHV,  // "cn-heavy/xhv"     CryptoNight-Heavy (modified, Haven Protocol only).
+		CN_UPX2_0,     // "cn-plex"          CryptoNight-Plex
         CN_PICO_0,     // "cn-pico"          CryptoNight-Pico
         CN_PICO_TLO,   // "cn-pico/tlo"      CryptoNight-Pico (TLO)
         CN_CCX,        // "cn/ccx"           Conceal (CCX)
@@ -92,6 +94,7 @@ public:
         CN_LITE,
         CN_HEAVY,
         CN_PICO,
+		CN_UPX2,
         RANDOM_X,
         ARGON2,
         ASTROBWT,
@@ -101,7 +104,7 @@ public:
     inline Algorithm()                                     {}
     inline Algorithm(Id id) : m_id(id)                     {}
 
-    inline bool isCN() const                          { auto f = family(); return f == CN || f == CN_LITE || f == CN_HEAVY || f == CN_PICO; }
+    inline bool isCN() const                          { auto f = family(); return f == CN || f == CN_LITE || f == CN_HEAVY || f == CN_PICO || f == CN_UPX2; }
     inline bool isEqual(const Algorithm &other) const { return m_id == other.m_id; }
     inline bool isValid() const                       { return m_id != INVALID; }
     inline Family family() const                      { return family(m_id); }
